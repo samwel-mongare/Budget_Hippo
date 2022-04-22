@@ -2,22 +2,23 @@ class ExpensesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @categories = expense.all.order(created_at: :desc)
+    @expenses = expense.all.order(created_at: :desc)
   end
 
   def show; end
 
   def new
     @expense = Expense.new
-    @categories = Category.all
   end
 
   def create
-    @expense = current_user.expenses.new(expense_params)
+    @current_category = Category.find_by(id: params[:category_id])
+    @new_expense = current_user.expenses.new(expense_params)
 
     respond_to do |format|
       format.html do
-        if @expense.save
+        if @new_expense.save
+          CategoriesExpense.create(category_id: @current_category.id , expense_id: @new_expense.id)
           flash[:notice] = 'Transaction added successfully.'
           redirect_to categories_path
         else
