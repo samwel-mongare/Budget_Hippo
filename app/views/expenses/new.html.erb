@@ -23,7 +23,12 @@
       </div>
       </div>
     </div>
-    <%= render 'add_new_category_item' %>
+    <div class="-mx-3 md:flex mb-6">
+    <div class="md:w-full px-3">
+      <%= f.select :category_id, @categories.collect { |category| [category.name, category.id] }, :prompt => 'Select a category',
+      class:"w-full bg-gray-200 text-black border border-gray-200 rounded py-3 px-4 mb-3", required: true %>
+      </div>
+    </div>
     <div class="-mx-3 md:flex mt-2">
       <div class="md:w-full px-3">
       <%= f.submit "Add Category", 
