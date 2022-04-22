@@ -9,6 +9,7 @@ class ExpensesController < ApplicationController
 
   def new
     @expense = Expense.new
+    @categories = Category.all
   end
 
   def create
