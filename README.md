@@ -83,7 +83,7 @@ rails db:test:prepare
 
 - [@githubhandle](https://github.com/Mosams/)
 - [@twitterhandle](https://twitter.com/sam_mongare)
-- [LinkedIn](https://www.linkedin.com/in/sammy-mongare-b8288310b/)
+- [@LinkedInhandle](https://www.linkedin.com/in/sammy-mongare-b8288310b/)
 
 ## 🤝 Contributing
 
