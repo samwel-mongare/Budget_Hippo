@@ -15,8 +15,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :users
   resources :categories_expenses
-
-  resources :categories do
-    resources :expenses 
-  end
+  resources :expenses 
+  resources :categories
 end

@@ -9,16 +9,17 @@ class ExpensesController < ApplicationController
 
   def new
     @expense = Expense.new
+    @categories = Category.all
   end
 
   def create
-    @current_category = Category.find_by(id: params[:category_id])
     @new_expense = current_user.expenses.new(expense_params)
+    @categories = Category.all
 
     respond_to do |format|
       format.html do
         if @new_expense.save
-          CategoriesExpense.create(category_id: @current_category.id , expense_id: @new_expense.id)
+          CategoriesExpense.create(category_id: @new_expense.category_id , expense_id: @new_expense.id)
           flash[:notice] = 'Transaction added successfully.'
           redirect_to categories_path
         else
@@ -32,6 +33,6 @@ class ExpensesController < ApplicationController
   private
 
   def expense_params
-    params.require(:expense).permit(:name, :amount)
+    params.require(:expense).permit(:name, :amount, :category_id)
   end
 end
