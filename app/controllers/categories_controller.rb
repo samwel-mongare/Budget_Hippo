@@ -1,5 +1,8 @@
 class CategoriesController < ApplicationController
+  load_and_authorize_resource
+
   def index
+    @categories = Category.all
   end
 
   def show
@@ -13,10 +16,14 @@ class CategoriesController < ApplicationController
     @category = current_user.categories.new(category_params)
 
     respond_to do |format|
-      if @category.save
-        format.html { redirect_to inventories_path, notice: 'Category created successfully' }
-      else
-        format.html { render :new, status: :unprocessable_entity, alert: 'Category created successfully' }
+      format.html do
+        if @category.save
+          flash[:notice] = 'Category added successfully.'
+          redirect_to categories_path
+        else
+          flash[:alert] = 'Category creation failed. Try again'
+          render :new, status: :unprocessable_entity
+        end
       end
     end
   end
