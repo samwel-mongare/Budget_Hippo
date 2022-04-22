@@ -14,9 +14,10 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :users
-  resources :category_items, except: %i[update]
+  
 
   resources :categories do
     resources :expenses 
+    resources :category_items, except: %i[update]
   end
 end
