@@ -1,16 +1,22 @@
-<h2>Sign up</h2>
+<div class="flex flex-col items-center justify-center min-h-screen bg-white">
+	<div class="bg-green-400 w-full sm:w-3/4 max-w-lg p-12 pb-6 shadow-2xl rounded">
+		<div class="text-white pb-4 text-3xl font-semibold">Budget Hippo</div>
+    <h2 class="text-white pb-4 text-2xl font-semibold" >Sign up</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, required: true, placeholder: "full name",
+    class: "block text-gray-700 p-1 m-4 ml-0 w-full rounded text-lg font-normal placeholder-gray-300" %>
   </div>
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", 
+    placeholder: "something@mail.com" , required: true,
+    class: "block text-gray-700 p-1 m-4 ml-0 w-full rounded text-lg font-normal placeholder-gray-300" %>
   </div>
 
   <div class="field">
@@ -18,17 +24,21 @@
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <%= f.password_field :password, autocomplete: "new-password", placeholder: "Unique Password",
+    class:"block text-gray-700 p-1 m-4 ml-0 w-full rounded text-lg font-normal placeholder-gray-300" %>
   </div>
 
   <div class="field">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Verify Password",
+    class:"block text-gray-700 p-1 m-4 ml-0 w-full rounded text-lg font-normal placeholder-gray-300"  %>
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", class:"inline-block mt-2 bg-green-600 hover:bg-green-700 focus:bg-green-800 px-6 py-2 rounded text-white shadow-lg" %>
   </div>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
+</div>
