@@ -1,5 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe CategoriesExpense, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'associations' do
+    it { should belong_to(:category).class_name('Category') }
+    it { should belong_to(:expense).class_name('Expense') }
+  end
 end
