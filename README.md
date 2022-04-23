@@ -9,7 +9,7 @@ https://mysterious-hollows-81066.herokuapp.com/
 
 ## Project presentation
 
-![Presentation](https://www.loom.com/share/0b743287b29442f5b62000b09e4c83fc)
+https://www.loom.com/share/0b743287b29442f5b62000b09e4c83fc
 
 ## Project screenshots
 
