@@ -1,11 +1,10 @@
 class ExpensesController < ApplicationController
   load_and_authorize_resource
 
-  def index
-    @expenses = Expense.all.order(created_at: :desc)
+  def show
+    @expense = Expense.find(params[:id])
+      @category_id = Category.find(@expense.category_id)
   end
-
-  def show; end
 
   def new
     @expense = Expense.new
