@@ -8,7 +8,7 @@
     <%= link_to "Add Category", new_category_path, 
     class:"md:w-full bg-blue-900 cursor-pointer text-white font-bold py-2 px-4 border-b-4 hover:border-b-2 border-blue-500 hover:border-blue-100 rounded-full" %>
 <div class="flow-root">
-    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700 mb-5">
+    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700 mb-5 list-none">
     <% else %>
       <% @categories.each_with_index  do |c, index| %>
         <%= link_to category_path(c.id), style:"text-decoration: none; color: black" do %>
