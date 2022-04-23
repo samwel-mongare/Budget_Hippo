@@ -11,7 +11,9 @@
     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700 mb-5">
     <% else %>
       <% @categories.each do |c| %>
+        <%= link_to category_path(c.id), style:"text-decoration: none; color: black" do %>
         <%= render 'category_list', :category => c %>
+        <% end %>
       <% end %>
       <li class="py-5 w-full">
           <div class="flex items-center space-x-4 w-full">
