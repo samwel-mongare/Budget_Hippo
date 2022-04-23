@@ -15,6 +15,7 @@ gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'turbo-rails'
 gem 'tzinfo-data'
+gem 'letter_opener'
 
 group :development, :test do
   gem 'database_cleaner'
@@ -24,7 +25,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'letter_opener'
   gem 'web-console'
 end
 
