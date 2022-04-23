@@ -1,2 +1,26 @@
-<h1>Expenses#show</h1>
-<p>Find me in app/views/expenses/show.html.erb</p>
+<div class="p-4 w-xl bg-white border shadow-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+  <div class="flex justify-between items-center mb-10">
+    <div class="flex-shrink-0">
+      <img class="w-20 h-20 rounded-full" src="<%= @category_id.icon %> " alt="Category Icon">
+    </div>
+    <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white"><%= @expense.name %></h5>
+    <%= link_to "Back", categories_path, class:"bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-full" %>
+</div>
+<div class="flow-root">
+    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700 mb-5">
+        <li class="py-3 sm:py-4 mb-5">
+        <div class="flex items-center space-x-4">
+            <div class="flex-1 min-w-0">
+                <p class="text-sm font-medium text-gray-900 truncate dark:text-white p-10">
+                   The transaction <%= @expense.name %> was added on <%= @expense.created_at %> <br> and it involved spending $<%= @expense.amount %>
+                </p>
+                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                Total Amount spent on Transaction: <span class="text-xl font-bold leading-none text-gray-900 dark:text-white"> 
+                <%= @expense.amount %> dollars</span>
+                </p>
+            </div>
+        </div>
+    </li>
+    </ul>
+  </div>
+</div>

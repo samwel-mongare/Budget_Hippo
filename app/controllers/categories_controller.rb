@@ -1,11 +1,20 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!
   load_and_authorize_resource
 
   def index
-    @categories = Category.all
+    @categories = Category.all.order(created_at: :desc)
+    @categories.each do |category|
+      @expenses = category.expenses.order(created_at: :desc)
+      @total_expenses = category.compute_total_expenses(@expenses)
+    end
   end
 
-  def show; end
+  def show
+    @expenses = @category.expenses.order(created_at: :desc)
+    @category_id = Category.find(@expenses[0].category_id) unless @expenses.empty?
+    @total_expenses = @category.compute_total_expenses(@expenses)
+  end
 
   def new
     @category = Category.new
