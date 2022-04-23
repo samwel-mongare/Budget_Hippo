@@ -14,7 +14,7 @@ RSpec.describe 'Category show page', type: :feature do
     @category1 = Category.create!(name: 'test', icon: 'fa-home', user_id: @user1.id)
     @expense = Expense.create!(name: 'test', amount: 10, author_id: @user1.id)
 
-    visit category_path(@expense.id)
+    visit category_path(@category1.id)
   end
 
   it 'should have the following content' do
