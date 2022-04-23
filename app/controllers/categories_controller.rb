@@ -3,10 +3,15 @@ class CategoriesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @categories = Category.all.order(created_at: :desc)
+    @categories = current_user.categories.order(created_at: :desc).all
+    @total_expenses = []
+
     @categories.each do |category|
-      @expenses = category.expenses.order(created_at: :desc)
-      @total_expenses = category.compute_total_expenses(@expenses)
+      total = 0
+      category.categories_expenses.each do |category_expense|
+        total += category_expense.expense.amount
+      end
+      @total_expenses.push(total)
     end
   end
 
