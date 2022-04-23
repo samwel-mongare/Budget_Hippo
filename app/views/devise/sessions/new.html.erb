@@ -1,25 +1,26 @@
-<div class="flex flex-col items-center justify-center min-h-screen bg-white">
-	<div class="bg-green-400 w-full sm:w-3/4 max-w-lg p-12 pb-6 shadow-2xl rounded">
+<div class="bg-green shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+  <div class="-mx-3 md:flex flex-col mb-6">
+  <div class="md:w-full px-3">
 		<div class="text-white pb-4 text-3xl font-semibold">Budget Hippo</div>
     <h2 class="text-white pb-4 text-2xl font-semibold" >Log In</h2>
-
+  </div>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, class:"text-white" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email", 
-    class:"block text-gray-700 p-1 m-4 ml-0 w-full rounded text-lg font-normal placeholder-gray-300" %>
+    class:"block text-white-700 p-1 m-4 ml-0 w-full rounded text-lg font-normal placeholder-gray-300" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
+    <%= f.label :password, class:"text-white" %><br />
     <%= f.password_field :password, autocomplete: "current-password",
-    class:"block text-gray-700 p-1 m-4 ml-0 w-full rounded text-lg font-normal placeholder-gray-300" %>
+    class:"block text-white-700 p-1 m-4 ml-0 w-full rounded text-lg font-normal placeholder-gray-300" %>
   </div>
 
   <% if devise_mapping.rememberable? %>
     <div class="field">
       <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+      <%= f.label :remember_me, class:"text-white" %>
     </div>
   <% end %>
 
