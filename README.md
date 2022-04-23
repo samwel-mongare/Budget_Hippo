@@ -3,6 +3,10 @@
 > Budget Hippo is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, 
 so that you can see how much money you spent and on what.
 
+## Project presentation
+
+![Presentation](https://www.loom.com/share/0b743287b29442f5b62000b09e4c83fc)
+
 ## Project screenshots
 
 ![screenshot](./app_screenshot.png)
