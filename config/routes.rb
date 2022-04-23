@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get '/users/sign_out' => 'devise/sessions#destroy'
     end
     unauthenticated :user do
-      root :to => "splash/index", as: :unauthenticated_root
+      root :to => "splash#index", as: :unauthenticated_root
     end
   end
   # Defines the root path route ("/")
