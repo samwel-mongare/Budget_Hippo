@@ -1,6 +1,6 @@
 
-<div class="p-4 max-w-md bg-white rounded-lg border shadow-md sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-<div class="flex justify-between items-center mb-4">
+<div class="p-4 w-xl bg-white border shadow-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+<div class="flex justify-between items-center mb-10">
     <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Customers</h5>
     <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
         View all
@@ -10,6 +10,11 @@
     <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
       <% @categories.each do |c| %>
         <%= render 'category_list', :category => c %>
+        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+                    $<%= total_expenses %>
+                    </div>
+                </div>
+            </li>
       <% end %>
     </ul>
   </div>

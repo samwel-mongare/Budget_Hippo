@@ -1,3 +1,33 @@
-<h1>Categories#show</h1>
-<p>Find me in app/views/categories/show.html.erb</p>
-<%= @total_expenses %>
+<div class="p-4 w-xl bg-white border shadow-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+<div class="flex justify-between items-center mb-10">
+    <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Latest Transactions</h5>
+    <h5 class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+    Total Expenses: $<%= @total_expenses %>
+    </h5>
+</div>
+<div class="flow-root">
+    <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+    
+      <% @expenses.each do |e| %>
+        <li class="py-3 sm:py-4 mb-5">
+        <div class="flex items-center space-x-4">
+            <div class="flex-shrink-0">
+                <img class="w-8 h-8 rounded-full" src="<%= @category_id.icon %> " alt="Category Icon">
+            </div>
+            <div class="flex-1 min-w-0">
+                <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                    <%= e.name %>
+                </p>
+                <p class="text-sm text-gray-500 truncate dark:text-gray-400">
+                <%= e.created_at %>
+                </p>
+            </div>
+            <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
+            $<%= e.amount %>
+            </div>
+        </div>
+    </li>
+    <% end %>
+    </ul>
+  </div>
+</div>

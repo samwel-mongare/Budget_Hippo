@@ -7,6 +7,7 @@ class CategoriesController < ApplicationController
 
   def show
     @expenses = @category.expenses.order(created_at: :desc)
+    @category_id = Category.find(@expenses[0].category_id)
     @total_expenses = @category.compute_total_expenses(@expenses)
   end
 
