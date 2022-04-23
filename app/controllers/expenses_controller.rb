@@ -2,7 +2,7 @@ class ExpensesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @expenses = expense.all.order(created_at: :desc)
+    @expenses = Expense.all.order(created_at: :desc)
   end
 
   def show; end
