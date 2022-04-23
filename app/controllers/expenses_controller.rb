@@ -21,7 +21,7 @@ class ExpensesController < ApplicationController
         if @new_expense.save
           CategoriesExpense.create(category_id: @new_expense.category_id , expense_id: @new_expense.id)
           flash[:notice] = 'Transaction added successfully.'
-          redirect_to categories_path
+          redirect_to category_path(@new_expense.category_id)
         else
           flash[:alert] = 'Transaction creation failed. Try again'
           render :new, status: :unprocessable_entity
