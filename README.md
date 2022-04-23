@@ -5,7 +5,7 @@ so that you can see how much money you spent and on what.
 
 ## Live Version
 
-![Live Version](https://mysterious-hollows-81066.herokuapp.com/)
+https://mysterious-hollows-81066.herokuapp.com/
 
 ## Project presentation
 
