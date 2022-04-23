@@ -3,6 +3,10 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all.order(created_at: :desc)
+    @categories.each do |category|
+      @expenses = category.expenses.order(created_at: :desc)
+      @total_expenses = category.compute_total_expenses(@expenses)
+    end
   end
 
   def show

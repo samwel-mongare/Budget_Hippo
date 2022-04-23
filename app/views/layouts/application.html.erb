@@ -10,7 +10,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="bg-white border shadow-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
   <header class="bg-gray-900">
     <%= render 'shared/header' %>
   </header>
@@ -35,6 +35,8 @@
       <% end %>
     <% end %>
   <% end %>
+  <main>
       <%= yield %>
+  </main>
   </body>
 </html>
