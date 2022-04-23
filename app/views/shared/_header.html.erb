@@ -11,7 +11,6 @@
     <li class="nav-item mr-5">
     <h6 class= "text-white">Welcome,  <%= current_user.name %></h6>
   </li>
-  
   <li class="nav-item">
     <%= link_to 'Sign Out', destroy_user_session_path , method: :delete, class: "text-sm font-semibold whitespace-nowrap dark:text-white" %>
   </li>

@@ -1,7 +1,5 @@
 class ExpensesController < ApplicationController
-  protect_from_forgery
-   include SessionsHelper
-   before_action :logged_in_user
+  before_action :authenticate_user!
   load_and_authorize_resource
 
   def show
