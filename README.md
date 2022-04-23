@@ -5,7 +5,7 @@ so that you can see how much money you spent and on what.
 
 ## Project screenshots
 
-![screenshot(COMING SOON)](./app_screenshot.png)
+![screenshot](./app_screenshot.png)
 
 Additional description about the project and its features.
 
