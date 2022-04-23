@@ -12,9 +12,7 @@ class CategoriesController < ApplicationController
 
   def show
     @expenses = @category.expenses.order(created_at: :desc)
-    unless @expenses.empty?
-    @category_id = Category.find(@expenses[0].category_id)
-    end
+    @category_id = Category.find(@expenses[0].category_id) unless @expenses.empty?
     @total_expenses = @category.compute_total_expenses(@expenses)
   end
 

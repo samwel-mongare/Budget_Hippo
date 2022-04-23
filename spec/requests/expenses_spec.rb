@@ -14,7 +14,7 @@ RSpec.describe ExpensesController, type: :controller do
     it { should route(:get, '/expenses/1').to(action: :show, id: 1) }
     it { should route(:post, '/expenses').to(action: :create) }
   end
-  
+
   context 'GET #new' do
     before { get :new }
 

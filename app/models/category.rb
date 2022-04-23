@@ -5,8 +5,8 @@ class Category < ApplicationRecord
 
   validates :name, presence: true
   validates :icon, presence: true
-  
+
   def compute_total_expenses(expenses)
-    expenses.map { |expense| expense.amount }.sum
+    expenses.map(&:amount).sum
   end
 end

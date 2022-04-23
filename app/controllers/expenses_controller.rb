@@ -4,7 +4,7 @@ class ExpensesController < ApplicationController
 
   def show
     @expense = Expense.find(params[:id])
-      @category_id = Category.find(@expense.category_id)
+    @category_id = Category.find(@expense.category_id)
   end
 
   def new
@@ -19,7 +19,7 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       format.html do
         if @new_expense.save
-          CategoriesExpense.create(category_id: @new_expense.category_id , expense_id: @new_expense.id)
+          CategoriesExpense.create(category_id: @new_expense.category_id, expense_id: @new_expense.id)
           flash[:notice] = 'Transaction added successfully.'
           redirect_to category_path(@new_expense.category_id)
         else
