@@ -7,9 +7,6 @@ so that you can see how much money you spent and on what.
 
 https://mysterious-hollows-81066.herokuapp.com/
 
-## Project presentation
-
-https://www.loom.com/share/0b743287b29442f5b62000b09e4c83fc
 
 ## Project screenshots
 
